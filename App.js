@@ -83,7 +83,7 @@ class Topo extends Component{
   render(){
     return (
       <View>
-        <Image source={require('./images/jokempo.png')}/>
+        <Image source={require('./images/jokenpo.png')}/>
       </View>
     )
   }
