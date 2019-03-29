@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import Topo from './components/topo.js'
+import Icone from './components/icone.js'
 
 export default class App extends React.Component {
 
@@ -69,23 +71,13 @@ export default class App extends React.Component {
         </View>
         <View>
           <View style={styles.palco}>
-            <Text>Escolha do computador {this.state.escolhaDoComputador}</Text>
-            <Text>escolha do usuário {this.state.escolhaDoUsuario}</Text>
-            <Text>Resultado {this.state.resultado}</Text>
+            <Icone escolha={this.state.escolhaDoUsuario} jogador='Você'/>
+            <Icone escolha={this.state.escolhaDoComputador} jogador='Computador'/>
+            <Text style={styles.txtResultado}>{this.state.resultado}</Text>
           </View>
         </View>
       </View>
     );
-  }
-}
-
-class Topo extends Component{
-  render(){
-    return (
-      <View>
-        <Image source={require('./images/jokempo.png')}/>
-      </View>
-    )
   }
 }
 
@@ -105,7 +97,14 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   palco:{
-
+    alignItems:'center',
+    marginTop:10
+  },
+  txtResultado:{
+    fontSize:25,
+    fontWeight: 'bold',
+    color: 'red',
+    heigth: 60
   }
-
-});
+}
+);
